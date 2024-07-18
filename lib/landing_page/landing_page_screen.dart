@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:new_landing_page/home_page_screen.dart';
+import 'package:new_landing_page/bottom_bar.dart';
 
 class LandingPageScreen extends StatelessWidget {
   const LandingPageScreen({super.key});
@@ -15,10 +15,7 @@ class LandingPageScreen extends StatelessWidget {
       body: GestureDetector(
         onHorizontalDragEnd: (DragEndDetails details) {
           if (details.primaryVelocity! < 0) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomePageScreen()),
-            );
+            Navigator.pushNamed(context, MyBottomNavBar.routeName);
           }
         },
         child: SafeArea(
@@ -45,11 +42,11 @@ class LandingPageScreen extends StatelessWidget {
                   ClipRect(
                     child: Image.asset(
                       'assets/images/font_image.png',
-                      height: screenHeight * 0.16, // 14% of screen height
+                      height: screenHeight * 0.16, 
                     ),
                   ),
                   SizedBox(
-                    height: screenHeight * 0.5, // 50% of screen height
+                    height: screenHeight * 0.5, 
                   ),
                   Text(
                     'To feel 20 again',
