@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:new_landing_page/pages/home_page/widgets/buildContainer_widget.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({super.key});
@@ -61,7 +62,7 @@ class HomePageScreen extends StatelessWidget {
                           color: const Color(0xFF053901),
                         ),
                       ),
-                      SizedBox(width: screenWidth * 0.05),
+                      SizedBox(width: screenWidth * 0.035),
                       Text(
                         'That\'s it',
                         style: GoogleFonts.josefinSans(
@@ -79,30 +80,44 @@ class HomePageScreen extends StatelessWidget {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 13,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xFFCAD0AF),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
+                        buildContainer(context,
+                            imgAddress: 'assets/images/Vector.png',
+                            color: const Color(0xFFCAD0AF),
+                            textColor: const Color(0xFF053901),
+                            text: 'Daily \nJournal',
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.2,
+                            buttonBackgroundColor: const Color(0xFFD7E5CA),
+                            iconColor: const Color(0xFF53924E)),
+                        buildContainer(context,
+                            imgAddress: 'assets/images/category2.png',
+                            color: const Color(0xFFFBDB9D),
+                            text: 'Medical \nRecords',
+                            textColor: const Color(0xFFB6861F),
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.2,
+                            buttonBackgroundColor: const Color(0xFFFFF1D0),
+                            iconColor: const Color(0xFFF4C555)),
+                        buildContainer(
+                          imgAddress: 'assets/images/category3.png',
+                          context,
+                          text: 'Medicine \nCalender',
+                          textColor: const Color(0xFFA35035),
+                          color: const Color(0xFFE2B9A6),
+                          width: screenWidth * 0.4,
+                          height: screenHeight * 0.2,
+                          buttonBackgroundColor: const Color(0xFFF3D5CB),
+                          iconColor: const Color(0xFFBF7466),
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xFFFBDB9D),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xFFE2B9A6),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xFFC7AA93),
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                        ),
+                        buildContainer(context,
+                            imgAddress: 'assets/images/category4.png',
+                            text: 'Reminders',
+                            textColor: const Color(0xFF5E3B27),
+                            color: const Color(0xFFC7AA93),
+                            width: screenWidth * 0.4,
+                            height: screenHeight * 0.2,
+                            buttonBackgroundColor: const Color(0xFFCFBDB0),
+                            iconColor: const Color(0xFF8C6A56)),
                       ],
                     ),
                   ),

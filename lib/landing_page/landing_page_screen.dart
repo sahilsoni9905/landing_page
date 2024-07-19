@@ -29,24 +29,20 @@ class LandingPageScreen extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(right: 20),
-                        child: ClipRect(
-                          child: Image.asset(
-                            'assets/images/top_sun.png',
-                            height: screenHeight * 0.1,
-                          ),
+                        child: Image.asset(
+                          'assets/images/top_sun.png',
+                          height: screenHeight * 0.1,
                         ),
                       ),
                     ],
                   ),
                   SizedBox(height: screenHeight * 0.01),
-                  ClipRect(
-                    child: Image.asset(
-                      'assets/images/font_image.png',
-                      height: screenHeight * 0.16, 
-                    ),
+                  Image.asset(
+                    'assets/images/font_image.png',
+                    height: screenHeight * 0.16,
                   ),
                   SizedBox(
-                    height: screenHeight * 0.5, 
+                    height: screenHeight * 0.5,
                   ),
                   Text(
                     'To feel 20 again',
@@ -57,34 +53,38 @@ class LandingPageScreen extends StatelessWidget {
                   SizedBox(
                     height: screenHeight * 0.01,
                   ),
-                  Text(
-                    'SWIPE RIGHT',
-                    style: GoogleFonts.quicksand(fontSize: screenWidth * 0.05),
-                  ),
                 ],
               ),
               Positioned(
                 top: screenHeight * 0.04,
                 left: screenWidth * -0.18,
                 right: 0,
-                child: ClipRect(
-                  child: Image.asset(
-                    'assets/images/center_yoga.png',
-                    fit: BoxFit.cover,
-                    height: screenHeight * 0.72,
-                  ),
+                child: Image.asset(
+                  'assets/images/center_yoga.png',
+                  fit: BoxFit.cover,
+                  height: screenHeight * 0.72,
+                ),
+              ),
+              Positioned(
+                top: screenHeight * 0.25,
+                left: screenWidth * 0.57,
+                child: Image.asset(
+                  'assets/images/right_cloud_home.png',
+                  height:
+                      screenHeight * 0.09, // Adjust this to your desired height
+
+                  fit: BoxFit
+                      .contain, // Ensure the image is scaled within its bounds
                 ),
               ),
               Positioned(
                 top: screenHeight * 0.83,
                 left: 0,
                 right: 0,
-                child: ClipRRect(
-                  child: Image.asset(
-                    'assets/images/right_arrow.png',
-                    fit: BoxFit.cover,
-                    height: screenHeight * 0.04,
-                  ),
+                child: Image.asset(
+                  'assets/images/right_arrow.png',
+                  fit: BoxFit.contain,
+                  height: screenHeight * 0.06,
                 ),
               )
             ],
