@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:new_landing_page/landing_page/landing_page_screen.dart';
+import 'package:new_landing_page/models/medicine_models.dart';
 import 'package:new_landing_page/router.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  Hive.registerAdapter(MedicineModelAdapter());
+  await Hive.openBox<MedicineModel>('medicinesRecords');
   runApp(const MyApp());
+  // runApp(
+  //   DevicePreview(
+  //     enabled: !kReleaseMode,
+  //     builder: (context) => const MyApp(),
+  //   ),
+//  );
 }
 
 class MyApp extends StatefulWidget {
@@ -21,6 +33,7 @@ class _MyAppState extends State<MyApp> {
       onGenerateRoute: (settings) => generateRoute(settings),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      // locale: DevicePreview.locale(context),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,

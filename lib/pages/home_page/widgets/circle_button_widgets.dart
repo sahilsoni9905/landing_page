@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_landing_page/pages/calender_page/calender_page_screen.dart';
 
 class CircleButton extends StatelessWidget {
   final VoidCallback onPressed;
@@ -15,7 +16,9 @@ class CircleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onPressed,
+      onTap: () {
+        Navigator.pushNamed(context, CalenderPageScreen.routeName);
+      },
       child: Container(
         width: 40,
         height: 40,

@@ -20,6 +20,17 @@ class HomePageScreen extends StatelessWidget {
       body: SafeArea(
         child: Stack(
           children: [
+            Positioned(
+              //
+              top: screenHeight * 0.55,
+              left: screenWidth * 0.75,
+              child: Image.asset(
+                'assets/images/leaf_right_home.png',
+                //color: Colors.black,
+                fit: BoxFit.contain,
+                height: screenHeight * 0.5,
+              ),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.09),
               child: Column(

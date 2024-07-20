@@ -25,62 +25,70 @@ class _MyButtomNavBarState extends State<MyBottomNavBar> {
 
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: Container(
-        height: screenHeight * 0.08,
-        margin:
-            EdgeInsets.symmetric(horizontal: screenWidth * 0.10, vertical: 30),
-        decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.5),
-              blurRadius: 25,
-              offset: const Offset(8, 20),
-            ),
-          ],
-        ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            backgroundColor: Color(0xFFD7E5CA), // Now it should work
-            selectedItemColor: Color.fromARGB(255, 12, 74, 17),
-            unselectedItemColor: Colors.black,
-            currentIndex: myCurrentIndex,
-            onTap: (index) {
-              setState(() {
-                myCurrentIndex = index;
-              });
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/images/home_icon.png',
-                  height: screenHeight * 0.035,
-                ),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/images/profile_icon.png',
-                  height: screenHeight * 0.035,
-                ),
-                label: "Profile",
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/images/journal_icon.png',
-                  height: screenHeight * 0.035,
-                ),
-                label: "Journal",
-              ),
-              BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/images/medical_record_icon.png',
-                  height: screenHeight * 0.035,
-                ),
-                label: "Records",
+      bottomNavigationBar: SafeArea(
+        child: Container(
+          height: screenHeight * 0.08,
+          margin: EdgeInsets.symmetric(
+              horizontal: screenWidth * 0.10, vertical: 30),
+          decoration: BoxDecoration(
+            color: const Color(
+                0xFFD7E5CA), 
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.5),
+                blurRadius: 25,
+                offset: const Offset(8, 20),
               ),
             ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              backgroundColor:
+                  Colors.transparent, // Make the background transparent
+              selectedItemColor: Color.fromARGB(255, 5, 59, 10),
+              unselectedItemColor: Colors.black,
+              currentIndex: myCurrentIndex,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              onTap: (index) {
+                setState(() {
+                  myCurrentIndex = index;
+                });
+              },
+              items: [
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/images/home_icon.png',
+                    height: screenHeight * 0.035,
+                  ),
+                  label: "Home",
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/images/profile_icon.png',
+                    height: screenHeight * 0.035,
+                  ),
+                  label: "Profile",
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/images/journal_icon.png',
+                    height: screenHeight * 0.035,
+                  ),
+                  label: "Journal",
+                ),
+                BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/images/medical_record_icon.png',
+                    height: screenHeight * 0.035,
+                  ),
+                  label: "Records",
+                ),
+              ],
+            ),
           ),
         ),
       ),

@@ -53,6 +53,12 @@ class LandingPageScreen extends StatelessWidget {
                   SizedBox(
                     height: screenHeight * 0.01,
                   ),
+                  Text(
+                    'SWIPE RIGHT',
+                    style: GoogleFonts.quicksand(
+                        fontSize: screenHeight * 0.03,
+                        color: const Color(0xFF053901)),
+                  )
                 ],
               ),
               Positioned(
@@ -70,11 +76,8 @@ class LandingPageScreen extends StatelessWidget {
                 left: screenWidth * 0.57,
                 child: Image.asset(
                   'assets/images/right_cloud_home.png',
-                  height:
-                      screenHeight * 0.09, // Adjust this to your desired height
-
-                  fit: BoxFit
-                      .contain, // Ensure the image is scaled within its bounds
+                  height: screenHeight * 0.09,
+                  fit: BoxFit.contain,
                 ),
               ),
               Positioned(
